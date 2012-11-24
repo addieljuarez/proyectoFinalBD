@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>Capturar productos</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen"></link>
+    </head>
+    <body>
+        <div id="test">
+            <img id="logo" src="imagenes/logo.png" ></img>
+        </div>
+        
+        <h:form>
+            <h:panelGrid  style="margin-left: 35%">
+                <div id="datos">
+                    <h3>Nombre del producto</h3>
+                    <h:inputText id="producto" required="true" requiredMessage="Aun falta poner el producto" value="#{cCapturar.modelo.producto}" style="margin-left: 20%" />
+                    <h:message for="producto" />
+                </div>
+                
+                <div id="datos">
+                    <h3>Anota la descripcion del producto</h3>
+                    <h:inputText id="descripcion" required="true" requiredMessage="Aun falta poner la descripcion" value="#{cCapturar.modelo.descripcion}" style="margin-left: 20%" />
+                    <h:message for="descripcion" />
+                </div>
+                
+                 <div id="datos">
+                    <h3>Anota el precio del producto</h3>
+                    <h:inputText id="precio" required="true" requiredMessage="Aun falta poner el precio" value="#{cCapturar.modelo.precio}" style="margin-left: 20%" />
+                    <h:message for="precio" />
+                </div>
+                
+                <div id="datos">
+                    <h3>Anota su clasificacion</h3>
+                    <h:inputText id="clasificacion" required="true" requiredMessage="Aun falta poner la clasificacion" value="#{cCapturar.modelo.clasificacion}" style="margin-left: 20%" />
+                    <h:message for="clasificacion" />
+                </div>
+            </h:panelGrid>
+            
+            <h:commandButton id="botonGuardar" accesskey="G" value="Guardar" action="#{cCapturar.add()}" style="margin-left: 42%; height: 60px; width: 100px; border-radius: 10px;" onclick="alert('Producto agregado')" >
+                <script type="text/javascript">
+                   
+                </script> 
+            </h:commandButton>
+        </h:form>
+        
+        <div id="created">
+            <h6>Created by Addiel Juárez</h6>
+        </div>
+    </body>
+</html>

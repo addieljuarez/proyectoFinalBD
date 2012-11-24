@@ -6,10 +6,8 @@ package controlador;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -26,12 +24,20 @@ public class Tienda implements Serializable{
     private String descripcion;
     @NotNull
     private BigDecimal precio;
-    
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fecha;
-    
+ 
     @NotNull
     private String clasificacion;
+    private String imagen;
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
+    
 
     public void setClasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
@@ -43,7 +49,7 @@ public class Tienda implements Serializable{
     
     
     
-    private String urlImagen;
+   
 
     public String getDescripcion() {
         return descripcion;
@@ -51,14 +57,6 @@ public class Tienda implements Serializable{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public BigDecimal getPrecio() {
@@ -77,13 +75,7 @@ public class Tienda implements Serializable{
         this.producto = producto;
     }
 
-    public String getUrlImagen() {
-        return urlImagen;
-    }
-
-    public void setUrlImagen(String urlImagen) {
-        this.urlImagen = urlImagen;
-    }
+   
     
     
 }
