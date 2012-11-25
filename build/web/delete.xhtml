@@ -4,11 +4,48 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
     <head>
-        <title>TODO supply a title</title>
+        <title>Elimina un producto</title>
+         <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen"></link>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="test">
+            <img id="logo" src="imagenes/logo.png" ></img>
+        </div>
+       <div id="texto2">
+             <h2>Elimina un Producto</h2>
+       </div>
+        
+        <h:form>
+            <div id="contenedor1">
+                <h:button value="Regresar" accesskey="R" outcome="index" />
+                <h:commandButton value="Eliminar" accesskey="S" action="#{ctrlDelete.delete()}" />
+                <h:inputHidden value="#{ctrlDelete.modelo.producto}" />
+               
+                <h:panelGrid  columns="3" cellpadding="0" cellspacing="8">
+                    <h:outputLabel value=" Producto: " ></h:outputLabel>
+                    <h:outputLabel value="#{ctrlDelete.modelo.producto}" style="color: #000000; padding-left: 40px;"  />
+                    <h:message for="producto" />
+                    
+                    <h:outputLabel value="Descripcion: " />
+                    <h:outputLabel value="#{ctrlDelete.modelo.descripcion}" style="color: #000000; padding-left: 40px;" />
+                    <h:message for="descripcion" />
+                    
+                    <h:outputLabel value="Precio: " />
+                    <h:outputLabel value="#{ctrlDelete.modelo.precio}" style="color: #000000; padding-left: 40px;"/>
+                    <h:message for="precio" />
+                </h:panelGrid>
+                
+            </div>
+        </h:form>
+       
+        
+      
+       
+        
+        
+        
+        
     </body>
 </html>

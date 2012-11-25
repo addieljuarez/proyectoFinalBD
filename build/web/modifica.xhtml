@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>Modificar o Eliminar </title>
+         <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen"></link>
+        
+    </head>
+    <body>
+        
+        <h:form>
+            <div id="test">
+                <img id="logo" src="imagenes/logo.png" ></img>
+            </div>
+            <div id="texto2">
+                    <h2> Modifica o Elimina un producto</h2>
+            </div>
+            
+            <div id="contenedor1">
+                
+                <h:button value="Regresar" accesskey="R" outcome="index" style="border-radius: 10px;" />
+                <h:commandButton value="Guardar cambios" accesskey="G" action="#{ctrlDetalle.add()}" style="border-radius: 10px;" />
+              
+                <h:inputHidden value="#{ctrlDetalle.producto.producto}" />
+               
+                
+                <h:panelGrid columns="3" cellpadding="0" cellspacing="8">
+                    <h:outputLabel value="producto:" />
+                    <h:inputText value="#{ctrlDetalle.producto.producto}" requiredMessage="Te falta el producto"/>
+                    <h:message for="producto" />
+
+                    <h:outputLabel for="descripcion" value="Descripcion:" />
+                    <h:inputText value="#{ctrlDetalle.producto.descripcion}"  requiredMessage="Te falta la "/>
+                    <h:message for="descripcion" />
+
+                    <h:outputLabel for="precio" value="Precio:" />
+                    <h:inputText value="#{ctrlDetalle.producto.precio}" requiredMessage="Te falta el precio"/>
+                    <h:message for="precio" />
+
+                </h:panelGrid>
+                
+                
+            </div>
+        </h:form>
+        <div id="created">
+            <h6>Created by Addiel Juárez</h6>
+        </div>
+    </body>
+</html>

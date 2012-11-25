@@ -25,7 +25,7 @@ public class Tienda implements Serializable{
     @NotNull
     private BigDecimal precio;
  
-    @NotNull
+    
     private String clasificacion;
     private String imagen;
 

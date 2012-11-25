@@ -4,11 +4,64 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
     <head>
-        <title>TODO supply a title</title>
+        <title>Listado</title>
+         <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen"></link>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="test">
+            <img id="logo" src="imagenes/logo.png" ></img>
+        </div>
+       <div id="texto2">
+             <h2> Listado de productos</h2>
+       </div>
+        
+       <p></p>
+       <div id="contenedor1">
+             <h:form>
+                 <h:messages style="color: white;" />
+                 <h:dataTable value="#{cConsulta.buscaTodo()}" var="consulta" >
+                     <h:column>
+                         <div style="color: #1C1C1C;">
+                             <f:facet name="header">
+                                 |   Producto       |
+                             </f:facet>
+                            | #{consulta.producto} |
+                         </div>
+                         
+                     </h:column>
+                     
+                     <h:column>
+                         <div style="color: #1C1C1C;">
+                             <f:facet name="header">
+                                Descripcion        |
+                            </f:facet>
+                            | #{consulta.descripcion} |
+                         </div>
+                         
+                     </h:column>
+                     
+                     <h:column>
+                         <div style="color: #1C1C1C;">
+                              <f:facet name="header" >
+                                Precio       |
+                              </f:facet>
+                             | #{consulta.precio} |  
+                         </div>
+                        
+                     </h:column>
+                     <h:column>
+                         <h:commandButton value="Modificar" action="#{ctrlDetalle.detalle(consulta)}" style="border-radius: 10px;" />
+                         <h:commandButton value="Eliminar" action="#{ctrlDelete.detalle(consulta)}" style="border-radius: 10px;" />
+                     </h:column>
+                  
+                     
+                 </h:dataTable>
+             </h:form>
+      </div>
+        <div id="created">
+            <h6>Created by Addiel Juárez</h6>
+        </div>
     </body>
 </html>
